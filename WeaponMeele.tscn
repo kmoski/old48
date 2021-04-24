@@ -16,3 +16,6 @@ texture = SubResource( 1 )
 offset = Vector2( 10.6667, 0 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="SwooshSpawnPoint" type="Position2D" parent="."]
+position = Vector2( 48, 0 )
