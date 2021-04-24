@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/floor.png-1b48e07f147edc2afaf92d2293e72762.image"
+
+[deps]
+
+source_file="res://img/floor.png"
+dest_files=[ "res://.import/floor.png-1b48e07f147edc2afaf92d2293e72762.image" ]
+
+[params]
+
