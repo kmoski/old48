@@ -2,7 +2,7 @@
 
 [ext_resource path="res://EDog.gd" type="Script" id=1]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 
 [node name="EDog" type="KinematicBody2D"]
 collision_layer = 2
@@ -10,6 +10,7 @@ collision_mask = 4
 script = ExtResource( 1 )
 speed = 300
 health = 100
+damage = 25
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 1 )

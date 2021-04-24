@@ -9,9 +9,9 @@ onready var tscn = preload("res://EDog.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var new_dog = tscn.instance()
-	new_dog.position = Vector2(400, 400)
-	add_child(new_dog)
+#	var new_dog = tscn.instance()
+#	new_dog.position = Vector2(400, 400)
+#	add_child(new_dog)
 	pass # Replace with function body.
 
 

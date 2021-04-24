@@ -58,4 +58,6 @@ func _input(event):
 		
 		# player sprite flipping
 		nodeSprite.flip_h = not (global_position > event.global_position)
-	
+
+func decrease_health(damage):
+	pass

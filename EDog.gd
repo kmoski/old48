@@ -5,6 +5,17 @@ func _ready():
 
 func _physics_process(delta):
 	if health < 20:
-		move_to(player, delta)
+		move_from(player.position, delta)
+		speed = 100
 	else:
-		move_from(player, delta)
+		move_to(player.position, delta)
+	
+	if near(player, 50):
+		if now_attack:
+			--current_attack_delay
+			if current_attack_delay <= 0:
+				now_attack = false
+		else:
+			now_attack = true
+			current_attack_delay = attack_delay
+			attack(player, damage)
