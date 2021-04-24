@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 onready var nodeAnimPlayer = $AnimationPlayer
 onready var nodeArms = $Arms
+onready var nodeWeapon = $Arms/Weapon
 onready var nodeSprite = $Sprite
 
 
@@ -59,3 +60,5 @@ func _input(event):
 		# player sprite flipping
 		nodeSprite.flip_h = not (global_position > event.global_position)
 	
+	if event.is_action_pressed("player_atack"):
+		nodeWeapon.swing()
