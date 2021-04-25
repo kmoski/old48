@@ -8,11 +8,19 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	if health <= 0:
+		nodeAnimPlayer.play("death")
+		return
+	
+	if in_stan():
+		nodeAnimPlayer.play("idle")
+		return
+	
 	if !delay_enable:
 		if health < 20:
-			move_from(Global.player.position, delta)
-			nodeAnimPlayer.play("run")
 			speed = 100
+			move_to(Global.player.position, delta)
+			nodeAnimPlayer.play("run")
 			# todo 
 		else:
 			move_to(Global.player.position, delta)

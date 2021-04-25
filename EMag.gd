@@ -11,6 +11,14 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	if health <= 0:
+		nodeAnimPlayer.play("death")
+		return
+	
+	if in_stan():
+		nodeAnimPlayer.play("idle")
+		return
+	
 	if near(Global.player.position, 100):
 		move_from(Global.player.position, delta)
 		nodeAnimPlayer.play("run")

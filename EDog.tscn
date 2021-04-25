@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://EDog.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 
-[sub_resource type="Image" id=6]
+[sub_resource type="Image" id=8]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 121, 65, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 195, 113, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 121, 65, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 195, 113, 0, 255, 0, 0, 0, 0, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 195, 113, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 195, 113, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 121, 65, 0, 255, 255, 255, 255, 255, 195, 113, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 195, 113, 0, 255, 121, 65, 0, 255, 195, 113, 0, 255, 121, 65, 0, 255, 195, 113, 0, 255, 195, 113, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 195, 113, 0, 255, 121, 65, 0, 255, 195, 113, 0, 255, 121, 65, 0, 255, 195, 113, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 195, 113, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0, 195, 113, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0, 195, 113, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 195, 113, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0, 195, 113, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0, 195, 113, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0, 195, 113, 0, 255, 121, 65, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 195, 113, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 195, 113, 0, 255, 121, 65, 0, 255, 0, 0, 0, 0 ),
 "format": "RGBA8",
@@ -16,8 +16,49 @@ data = {
 [sub_resource type="ImageTexture" id=3]
 flags = 3
 flags = 3
-image = SubResource( 6 )
+image = SubResource( 8 )
 size = Vector2( 48, 24 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "death"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "idle"
@@ -34,6 +75,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -70,5 +135,6 @@ hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "run"
+anims/death = SubResource( 7 )
 anims/idle = SubResource( 4 )
 anims/run = SubResource( 5 )

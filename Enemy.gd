@@ -8,6 +8,9 @@ export var damage = 1
 export var attack_delay = 1
 var delay_enable := false
 var current_attack_delay
+var stan = false
+var stan_delay = 30
+var current_stan_delay:int
 
 func _ready():
 	delay_enable = false
@@ -23,6 +26,13 @@ func move_from(target_position, delta):
 
 func decrease_health(damage):
 	health -= damage
+	stan = true
+	current_stan_delay = stan_delay
+
+func in_stan() -> bool:
+	if stan:
+		current_stan_delay -= 1
+	return current_stan_delay > 0
 
 func attack(target, damage):
 	target.decrease_health(damage)
