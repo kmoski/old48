@@ -14,7 +14,7 @@ func _physics_process(delta):
 		if current_attack_delay <= 0:
 			delay_enable = false
 	else:
-		if near(player.position, 200):
+		if near(Global.player.position, 200):
 			if start_attack:
 				attack_player(delta)
 #				if near(attack_direction, 5):
@@ -26,7 +26,7 @@ func _physics_process(delta):
 			else:
 				# атака начинается
 				start_attack = true
-				attack_direction = self.position.direction_to(player.position)
+				attack_direction = self.position.direction_to(Global.player.position)
 				attack_player(delta)
 		else:
 			if start_attack:
@@ -40,7 +40,7 @@ func _physics_process(delta):
 				speed = 150
 			else:
 				speed = 240
-			move_to(player.position, delta)
+			move_to(Global.player.position, delta)
 
 func attack_player(delta):
 	speed = 1000

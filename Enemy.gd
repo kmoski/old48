@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 class_name Enemy
 
-onready var player = get_node("../../Player")
 export var speed = 1
 export var health = 1
 export var damage = 1
