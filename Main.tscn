@@ -53,3 +53,29 @@ margin_right = 940.0
 margin_bottom = 14.0
 max_value = 2000.0
 script = ExtResource( 6 )
+
+[node name="GameOver" type="Label" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4600.0
+margin_top = -2664.0
+margin_right = -4600.0
+margin_bottom = -2664.0
+rect_scale = Vector2( 10, 10 )
+text = "GAME OVER"
+align = 1
+valign = 1
+
+[node name="GameCompleted" type="Label" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -3048.0
+margin_top = -1776.0
+margin_right = -3048.0
+margin_bottom = -1776.0
+rect_scale = Vector2( 7, 7 )
+text = "GAME COMPLETED!!"
+align = 1
+valign = 1

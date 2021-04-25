@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://MagBall.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="Image" id=4]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 233, 174, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 216, 128, 251, 255, 212, 98, 255, 255, 190, 78, 233, 255, 0, 0, 0, 0, 0, 0, 0, 0, 233, 174, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 212, 98, 255, 255, 180, 63, 225, 255, 174, 74, 212, 255, 212, 98, 255, 255, 216, 128, 251, 255, 0, 0, 0, 0, 0, 0, 0, 0, 190, 78, 233, 255, 174, 74, 212, 255, 156, 67, 190, 255, 156, 67, 190, 255, 180, 63, 225, 255, 212, 98, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 212, 98, 255, 255, 180, 63, 225, 255, 156, 67, 190, 255, 156, 67, 190, 255, 174, 74, 212, 255, 190, 78, 233, 255, 0, 0, 0, 0, 0, 0, 0, 0, 216, 128, 251, 255, 212, 98, 255, 255, 174, 74, 212, 255, 180, 63, 225, 255, 212, 98, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 233, 174, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 190, 78, 233, 255, 212, 98, 255, 255, 216, 128, 251, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 233, 174, 255, 255, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="ImageTexture" id=3]
+image = SubResource( 4 )
+size = Vector2( 24, 24 )
 
 [node name="MagBall" type="Area2D"]
 collision_layer = 8
@@ -12,4 +25,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_MagBall_body_entered"]
