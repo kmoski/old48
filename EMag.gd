@@ -16,6 +16,7 @@ func _physics_process(delta):
 	
 	if health <= 0:
 		nodeAnimPlayer.play("death")
+		die()
 		return
 	
 	if in_stan():
