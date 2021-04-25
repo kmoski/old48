@@ -2,6 +2,7 @@ extends Node
 
 var tscnMeeleSwoosh = preload("res://MeeleSwoosh.tscn")
 var tscnMagBall = preload("res://MagBall.tscn")
+var tscnBloodParts = preload("res://BloodParticles.tscn")
 var player: Player
 var stop:bool = false
 
