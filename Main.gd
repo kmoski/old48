@@ -18,7 +18,7 @@ func _ready():
 
 func game_over():
 	nodeGameOver.visible = true
-	Global.player.queue_free()
+	#Global.player.queue_free()
 	
 	
 func game_completed():
