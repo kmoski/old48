@@ -2,7 +2,11 @@ extends Node2D
 
 onready var nodeLevel = $Level
 
+var curLevelIdx = 0
+
 signal next_level
+signal game_completed
+signal game_over
 
 
 func _ready():
@@ -12,7 +16,14 @@ func _ready():
 
 
 func next_level():
-	emit_signal("next_level")
 	nodeLevel.queue_free()
 	
-	#load("res://levels/Level0.tscn")
+	curLevelIdx += 1
+	emit_signal("next_level")
+	
+	if Global.levels.size() - 1 >= curLevelIdx:
+		nodeLevel = Global.levels[curLevelIdx].instance()
+		add_child(nodeLevel)
+	
+	else:
+		emit_signal("game_completed")

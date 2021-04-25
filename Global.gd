@@ -10,7 +10,7 @@ var levels = []
 func _ready():
 	var file = File.new()
 	
-	for i in range(10):
+	for i in range(100):
 		var filePath = "res://levels/Level" + str(i) + ".tscn"
 		if file.file_exists(filePath):
 			levels.append(load(filePath))
