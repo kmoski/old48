@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/ball.png-2583a0284b40427749c53cd1463bfcb1.image"
+
+[deps]
+
+source_file="res://img/ball.png"
+dest_files=[ "res://.import/ball.png-2583a0284b40427749c53cd1463bfcb1.image" ]
+
+[params]
+

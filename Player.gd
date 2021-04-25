@@ -15,6 +15,8 @@ var moveDec = 2500
 
 var rotAng = 0.0
 
+var health = 200
+
 
 enum STATES {
 	IDLE, RUN, JUMP_TO_NEXT_LEVEL
