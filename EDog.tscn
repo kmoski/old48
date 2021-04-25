@@ -11,6 +11,7 @@ script = ExtResource( 1 )
 speed = 300
 health = 100
 damage = 25
+attack_delay = 15
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

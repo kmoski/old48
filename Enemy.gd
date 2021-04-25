@@ -7,11 +7,11 @@ export var speed = 1
 export var health = 1
 export var damage = 1
 export var attack_delay = 1
-var now_attack := false
+var delay_enable := false
 var current_attack_delay
 
 func _ready():
-	now_attack = false
+	delay_enable = false
 	pass
 
 func move_to(target_position, delta):
@@ -28,6 +28,6 @@ func decrease_health(damage):
 func attack(target, damage):
 	target.decrease_health(damage)
 
-func near(target, distance) -> bool:
-	var current_distance = self.position.distance_to(target.position)
+func near(target_position, distance) -> bool:
+	var current_distance = self.position.distance_to(target_position)
 	return current_distance <= distance

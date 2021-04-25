@@ -10,12 +10,12 @@ func _physics_process(delta):
 	else:
 		move_to(player.position, delta)
 	
-	if near(player, 50):
-		if now_attack:
-			--current_attack_delay
+	if near(player.position, 50):
+		if delay_enable:
+			current_attack_delay -= 1
 			if current_attack_delay <= 0:
-				now_attack = false
+				delay_enable = false
 		else:
-			now_attack = true
+			delay_enable = true
 			current_attack_delay = attack_delay
 			attack(player, damage)
