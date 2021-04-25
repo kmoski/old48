@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+class_name Player
 
 onready var nodeAnimPlayer = $AnimationPlayer
 onready var nodeArms = $Arms

@@ -9,13 +9,43 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Enemy",
+"class": "EDog",
+"language": "GDScript",
+"path": "res://EDog.gd"
+}, {
+"base": "Enemy",
+"class": "EMag",
+"language": "GDScript",
+"path": "res://EMag.gd"
+}, {
+"base": "Enemy",
+"class": "EWarrior",
+"language": "GDScript",
+"path": "res://EWarrior.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://Enemy.gd"
+}, {
+"base": "Area2D",
+"class": "MagBall",
+"language": "GDScript",
+"path": "res://MagBall.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player.gd"
 } ]
 _global_script_class_icons={
-"Enemy": ""
+"EDog": "",
+"EMag": "",
+"EWarrior": "",
+"Enemy": "",
+"MagBall": "",
+"Player": ""
 }
 
 [application]

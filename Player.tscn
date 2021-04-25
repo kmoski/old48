@@ -4,6 +4,7 @@
 [ext_resource path="res://WeaponMeele.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 25.0
 
 [sub_resource type="Image" id=6]
 data = {

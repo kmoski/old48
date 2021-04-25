@@ -1,5 +1,7 @@
 extends Enemy
 
+class_name EWarrior
+
 var start_attack := false
 var attack_direction
 
@@ -29,7 +31,6 @@ func _physics_process(delta):
 		else:
 			if start_attack:
 				start_attack = false
-				print("stop")
 				# attack delay
 				delay_enable = true
 				current_attack_delay = attack_delay
@@ -44,5 +45,7 @@ func _physics_process(delta):
 func attack_player(delta):
 	speed = 1000
 	move_and_collide(attack_direction * speed * delta)
-	if near(player.position, 50):
-		attack(player, damage)
+
+func _on_Area2D_body_entered(body):
+	if body is Player:
+		body.decrease_health(damage)
