@@ -12,8 +12,10 @@ func _ready():
 	for enemy in nodeEnemies.get_children():
 		if enemy is EMag:
 			enemy.connect("create_mag_ball", self, "add_ball")
-			
-			enemy_
+		
+		enemy.connect("died", self, "enemy_destroyed")
+		enemy.connect("create_particles", get_parent(), "create_particles")
+		
 
 
 func add_ball(ball):
@@ -21,7 +23,7 @@ func add_ball(ball):
 
 
 func enemy_destroyed():
-	
+	enemiesCount -= 1
 	
 	if enemiesCount == 0:
 		emit_signal("level_ended")

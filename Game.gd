@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var nodeLevel = $Level
+onready var nodeParticles = $Particles
 
 var curLevelIdx = 0
 
@@ -27,3 +28,7 @@ func next_level():
 	
 	else:
 		emit_signal("game_completed")
+
+
+func create_particles(instance):
+	nodeParticles.add_child(instance)

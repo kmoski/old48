@@ -11,6 +11,10 @@ var current_attack_delay
 var stan = false
 var stan_delay = 30
 var current_stan_delay:int
+var died = false
+
+signal died
+signal create_particles
 
 func _ready():
 	delay_enable = false
@@ -28,6 +32,14 @@ func decrease_health(damage):
 	health -= damage
 	stan = true
 	current_stan_delay = stan_delay
+
+func die():
+	died = true
+	emit_signal("died")
+	
+	var newParticles = Global.tscnBloodParts.instance()
+	newParticles.position = global_position
+	emit_signal("create_particles", newParticles)
 
 func in_stan() -> bool:
 	if stan:
