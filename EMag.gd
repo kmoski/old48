@@ -11,6 +11,9 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	if Global.stop:
+		return
+	
 	if health <= 0:
 		nodeAnimPlayer.play("death")
 		return
