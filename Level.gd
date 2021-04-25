@@ -3,6 +3,8 @@ extends Node2D
 onready var nodeEnemies = $Enemies
 onready var nodeBalls = $MagBalls
 
+var enemiesCount = 10
+
 signal level_ended
 
 
@@ -17,4 +19,10 @@ func add_ball(ball):
 
 
 func enemy_destroyed():
-	pass
+	if enemiesCount == 0:
+		emit_signal("level_ended")
+
+
+func _input(event):
+	if event.is_action_pressed("next_level"):
+		emit_signal("level_ended")
