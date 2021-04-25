@@ -2,7 +2,7 @@ extends Area2D
 
 class_name MagBall
 
-onready var player = get_node("../../Player")
+onready var player = get_node("../Player")
 
 export var speed = 1000
 export var lifeTime = 1
