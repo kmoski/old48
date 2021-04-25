@@ -18,12 +18,36 @@ position = Vector2( 39.8892, 531.856 )
 position = Vector2( 38.7812, 570.637 )
 
 [node name="EDog4" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 921.884, 576.177 )
+position = Vector2( 89.7507, 547.368 )
 
 [node name="EDog5" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 985.042, 571.745 )
 
 [node name="EDog6" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 1002.77, 525.208 )
+
+[node name="EDog7" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 931.856, 554.017 )
+
+[node name="EDog8" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 938.504, 521.884 )
+
+[node name="EDog9" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 56.5095, 271.468 )
+
+[node name="EDog10" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 45.4291, 319.114 )
+
+[node name="EDog11" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 52.0773, 368.975 )
+
+[node name="EDog12" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 970.637, 300.277 )
+
+[node name="EDog13" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 989.473, 347.923 )
+
+[node name="EDog14" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 976.177, 402.216 )
 
 [node name="MagBalls" type="Node" parent="."]

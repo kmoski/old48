@@ -10,6 +10,14 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	if health <= 0:
+		nodeAnimPlayer.play("death")
+		return
+	
+	if in_stan():
+		nodeAnimPlayer.play("idle")
+		return
+		
 	if delay_enable:
 		current_attack_delay -= 1
 		nodeAnimPlayer.play("idle")

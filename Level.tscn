@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
+[ext_resource path="res://EWarrior.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EDog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://EMag.tscn" type="PackedScene" id=5]
 
@@ -12,37 +13,10 @@ script = ExtResource( 1 )
 [node name="EDog" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 928, 536 )
 
-[node name="EDog2" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 80, 552 )
-
-[node name="EDog3" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 760, 560 )
-
-[node name="EDog4" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 272, 568 )
-
-[node name="EDog5" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 40, 448 )
-
-[node name="EDog6" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 472, 568 )
-
-[node name="EDog7" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 624, 568 )
-
-[node name="EDog8" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 960, 432 )
-
-[node name="EDog9" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 384, 568 )
-
-[node name="EDog10" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 848, 560 )
-
 [node name="EMag" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 40, 56 )
 
-[node name="EMag2" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 952, 56 )
+[node name="EWarrior" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 440, 456 )
 
 [node name="MagBalls" type="Node" parent="."]
