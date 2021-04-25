@@ -7,7 +7,6 @@ onready var nodeArms = $Arms
 onready var nodeWeapon = $Arms/Weapon
 onready var nodeSprite = $Sprite
 
-
 var moveVec = Vector2()
 var moveMaxSpeed = 350
 var moveAcc = 2500
@@ -63,6 +62,7 @@ func _input(event):
 
 	if event.is_action_pressed("player_atack"):
 		nodeWeapon.swing()
+
 
 func decrease_health(damage):
 	pass
