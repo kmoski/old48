@@ -4,6 +4,7 @@ class_name EWarrior
 
 var start_attack := false
 var attack_direction
+onready var nodeAnimPlayer = $AnimationPlayer
 
 func _ready():
 	pass
@@ -11,6 +12,7 @@ func _ready():
 func _physics_process(delta):
 	if delay_enable:
 		current_attack_delay -= 1
+		nodeAnimPlayer.play("idle")
 		if current_attack_delay <= 0:
 			delay_enable = false
 	else:
@@ -41,10 +43,12 @@ func _physics_process(delta):
 			else:
 				speed = 240
 			move_to(Global.player.position, delta)
+			nodeAnimPlayer.play("run")
 
 func attack_player(delta):
 	speed = 1000
 	move_and_collide(attack_direction * speed * delta)
+	nodeAnimPlayer.play("attack")
 
 func _on_Area2D_body_entered(body):
 	if body is Player:

@@ -2,8 +2,8 @@ extends Enemy
 
 class_name EMag
 
-
 var attack_direction
+onready var nodeAnimPlayer = $AnimationPlayer
 
 signal create_mag_ball(ballInst)
 
@@ -13,8 +13,12 @@ func _ready():
 func _physics_process(delta):
 	if near(Global.player.position, 100):
 		move_from(Global.player.position, delta)
+		nodeAnimPlayer.play("run")
 	elif !near(Global.player.position, 300):
 		move_to(Global.player.position, delta)
+		nodeAnimPlayer.play("run")
+	else:
+		nodeAnimPlayer.play("idle")
 	
 	if delay_enable:
 		current_attack_delay -= 1
