@@ -24,4 +24,4 @@ func _on_MeeleSwoosh_body_entered(body):
 	if !kill:
 		if body is Enemy:
 			body.decrease_health(damage)
-			kill = false
+			kill = true
