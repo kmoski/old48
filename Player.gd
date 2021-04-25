@@ -6,6 +6,7 @@ onready var nodeAnimPlayer = $AnimationPlayer
 onready var nodeArms = $Arms
 onready var nodeWeapon = $Arms/Weapon
 onready var nodeSprite = $Sprite
+onready var nodeTween = $Tween
 
 var moveVec = Vector2()
 var moveMaxSpeed = 350
@@ -15,11 +16,20 @@ var moveDec = 2500
 var rotAng = 0.0
 
 
+enum STATES {
+	IDLE, RUN, JUMP_TO_NEXT_LEVEL
+}
+export var curState = STATES.IDLE
+
+
 func _ready():
 	pass
 
 
 func _physics_process(delta):
+	
+	if curState == STATES.JUMP_TO_NEXT_LEVEL:
+		return
 	
 	# moving
 	var inpVec = Vector2()
@@ -41,17 +51,31 @@ func _physics_process(delta):
 		moveVec = moveVec.clamped(moveMaxSpeed)
 	
 	move_and_slide(moveVec)
-	set_animation()
+	set_state()
 
 
-func set_animation():
+func set_state():
+	if curState == STATES.JUMP_TO_NEXT_LEVEL:
+		return
+	
 	if moveVec.length() > 0:
+		curState = STATES.RUN
 		nodeAnimPlayer.play("Run")
 	else:
+		curState = STATES.IDLE
 		nodeAnimPlayer.play("Idle")
 
 
+func jump_to_next_level():
+	curState = STATES.JUMP_TO_NEXT_LEVEL
+	nodeAnimPlayer.play("JumpToNextLevel")
+
+
 func _input(event):
+	
+	if curState == STATES.JUMP_TO_NEXT_LEVEL:
+		return
+	
 	if event is InputEventMouseMotion:
 		# weapon rotation
 		rotAng = global_position.angle_to_point(event.global_position) + PI
