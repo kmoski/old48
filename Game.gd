@@ -14,6 +14,8 @@ func _ready():
 	Global.player = $Player
 	nodeLevel.connect("level_ended", self, "next_level")
 	nodeLevel.connect("level_ended", Global.player, "jump_to_next_level")
+	
+	Global.player.connect("dead", self, "player_dead")
 
 
 func next_level():
@@ -24,6 +26,8 @@ func next_level():
 	
 	if Global.levels.size() - 1 >= curLevelIdx:
 		nodeLevel = Global.levels[curLevelIdx].instance()
+		nodeLevel.connect("level_ended", self, "next_level")
+		nodeLevel.connect("level_ended", Global.player, "jump_to_next_level")
 		add_child(nodeLevel)
 	
 	else:
@@ -32,3 +36,7 @@ func next_level():
 
 func create_particles(instance):
 	nodeParticles.add_child(instance)
+
+
+func player_dead():
+	emit_signal("game_over")

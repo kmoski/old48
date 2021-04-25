@@ -14,12 +14,14 @@ var moveAcc = 2500
 var moveDec = 2500
 
 var rotAng = 0.0
-
+var HP = 2000
 
 enum STATES {
 	IDLE, RUN, JUMP_TO_NEXT_LEVEL
 }
 export var curState = STATES.IDLE
+
+signal dead
 
 
 func _ready():
@@ -89,4 +91,11 @@ func _input(event):
 
 
 func decrease_health(damage):
-	pass
+	HP = clamp(HP - damage, 0, INF)
+	
+	if HP == 0:
+		die()
+		
+
+func die():
+	emit_signal("dead")
