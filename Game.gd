@@ -8,6 +8,7 @@ signal next_level
 
 
 func _ready():
+	Global.player = $Player
 	nodeLevel.connect("level_ended", self, "next_level")
 
 

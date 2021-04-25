@@ -11,10 +11,10 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if near(player.position, 100):
-		move_from(player.position, delta)
-	elif !near(player.position, 300):
-		move_to(player.position, delta)
+	if near(Global.player.position, 100):
+		move_from(Global.player.position, delta)
+	elif !near(Global.player.position, 300):
+		move_to(Global.player.position, delta)
 	
 	if delay_enable:
 		current_attack_delay -= 1
@@ -28,5 +28,5 @@ func _physics_process(delta):
 func spawn_ball():
 	var new_ball = Global.tscnMagBall.instance()
 	new_ball.position = position
-	new_ball.rotation = position.angle_to_point(player.position)
+	new_ball.rotation = position.angle_to_point(Global.player.position)
 	emit_signal("create_mag_ball", new_ball)
