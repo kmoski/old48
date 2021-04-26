@@ -10,7 +10,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if Global.stop:
+	if !initiated:
 		return
 	
 	if health <= 0:

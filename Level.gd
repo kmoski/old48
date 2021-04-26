@@ -23,6 +23,9 @@ func add_ball(ball):
 
 
 func enemy_destroyed():
+	if Global.game_over:
+		return
+	
 	enemiesCount -= 1
 	
 	if enemiesCount == 0:

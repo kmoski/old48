@@ -40,3 +40,10 @@ func create_particles(instance):
 
 func player_dead():
 	emit_signal("game_over")
+	Global.game_over = true
+
+
+func _input(event):
+	if event.is_action_pressed("restart_game") and Global.game_over:
+		get_tree().reload_current_scene()
+		Global.reset()

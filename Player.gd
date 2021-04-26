@@ -14,7 +14,7 @@ var moveAcc = 2500
 var moveDec = 2500
 
 var rotAng = 0.0
-var HP = 2000
+var HP = 4000
 
 enum STATES {
 	IDLE, RUN, JUMP_TO_NEXT_LEVEL

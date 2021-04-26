@@ -6,6 +6,8 @@ var tscnBloodParts = preload("res://BloodParticles.tscn")
 var player: Player
 var stop:bool = false
 
+var game_over = false
+
 var levels = []
 
 
@@ -16,3 +18,8 @@ func _ready():
 		var filePath = "res://levels/Level" + str(i) + ".tscn"
 		if file.file_exists(filePath):
 			levels.append(load(filePath))
+
+
+func reset():
+	stop = false
+	game_over = false

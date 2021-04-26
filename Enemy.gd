@@ -12,13 +12,15 @@ var stan = false
 var stan_delay = 30
 var current_stan_delay:int
 var died = false
+var initiated = false
 
 signal died
 signal create_particles
 
 func _ready():
 	delay_enable = false
-	pass
+	yield(get_tree().create_timer(1), "timeout")
+	initiated = true
 
 func move_to(target_position, delta):
 	var velocity = self.position.direction_to(target_position)
